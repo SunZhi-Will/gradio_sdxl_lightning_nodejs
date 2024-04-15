@@ -1,0 +1,39 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trigger Index.mjs Method</title>
+</head>
+<body>
+  <h1>Trigger Index.mjs Method</h1>
+  <label for="textInput">Enter Text:</label>
+  <input type="text" id="textInput"><br><br>
+
+  <label for="selectInput">Select Option:</label>
+  <select id="selectInput">
+    <option value="1-Step">1-Step</option>
+    <option value="4-Step">4-Step</option>
+    <option value="8-Step">8-Step</option>
+  </select><br><br>
+
+  <button id="triggerButton">Trigger Method</button>
+
+  <script type="module">
+    // index.mjs 中的方法
+    import myMethod  from './index.mjs';
+
+    // 按鈕點擊事件處理程序
+    document.getElementById('triggerButton').addEventListener('click', () => {
+        console.log('test')
+      // 獲取文本框和下拉選單的值
+      const textValue = document.getElementById('textInput').value;
+      const selectValue = document.getElementById('selectInput').value;
+
+      // 調用 index.mjs 中的方法並傳遞值
+      myMethod(textValue, selectValue);
+    });
+  </script>
+</body>
+</html>
